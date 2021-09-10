@@ -1,0 +1,43 @@
+{% extends "index_admin.html" %}
+{% block body %}
+<body>
+<form id="form1" name="form1" method="post" action="/admin_complaint_view">
+  <table class="table table-bordered">
+    <tr>
+      <th>date from</th>
+      <td><input type="date" name="fromd"/></td>
+        <th>date to</th>
+      <td><input type="date" name="tod"/></td>
+              <th><input type="submit" name="button" id="button" value="view" class="btn btn-primary"/></th>
+
+    </tr>
+
+  </table>
+  <table class="table table-bordered">
+    <tr>
+      <th>SL. NO</th>
+      <th>DATE</th>
+      <th>USER INFO</th>
+      <th>COMPLAINT</th>
+        <th>REPLY</th>
+
+    </tr>
+       {% for i in data %}
+    <tr>
+      <td>{{ loop.index }}&nbsp;</td>
+      <td>{{ i['date'] }}&nbsp;</td>
+      <td>&nbsp;{{ i['name'] }}<br>{{ i['phone_no'] }}&nbsp;</td>
+        <td>{{ i['complaint'] }}&nbsp;</td>
+        {% if i['reply']=='pending' %}
+        <td><a href="/admin_reply/{{ i["cid"] }}"class="btn btn-primary">reply</a></td>
+    {% else %}
+            <td>{{ i['reply'] }}&nbsp;</td>
+    {% endif %}
+
+    </tr>
+      {% endfor %}
+
+  </table>
+</form>
+</body>
+{% endblock %}

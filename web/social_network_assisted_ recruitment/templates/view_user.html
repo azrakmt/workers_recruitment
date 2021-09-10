@@ -1,0 +1,39 @@
+{% extends "index_admin.html" %}
+{% block body %}
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table class="table table-bordered">
+    <tr>
+      <th width="100">SL. NO</th>
+      <th width="4">NAME</th>
+      <th width="150">PHONE NUMBER</th>
+      <th width="4">PLACE</th>
+      <th width="4">POST</th>
+      <th width="4">IMAGE</th>
+      <th width="4">OCCUPATION</th>
+      <th width="160">EMAIL</th>
+        <td></td>
+    </tr>
+      {% for i in data %}
+    <tr>
+      <td>{{ loop.index }}&nbsp;</td>
+      <td>{{ i['name'] }}&nbsp;</td>
+      <td>&nbsp;{{ i['phone_no'] }}&nbsp;</td>
+        <td>{{ i['place'] }}&nbsp;</td>
+        <td>{{ i['post'] }}&nbsp;</td>
+        <td><img src="{{ i['image'] }}" alt="" height="100" width="100"/>&nbsp;</td>
+        <td>{{ i['occupation'] }}&nbsp;</td>
+        <td>{{ i['email'] }}</td>
+    <td>
+        {% if i['type'] == 'user' %}
+            <a href="/admin_block_user/{{ i['loginid'] }}" class="btn btn-danger">BLOCK USER</a>
+        {% else %}
+            <a href="/admin_unblock_user/{{ i['loginid'] }}" class="btn btn-success">UNBLOCK USER</a>
+        {% endif %}
+    </td>
+    </tr>
+   {% endfor %}
+  </table>
+</form>
+</body>
+{% endblock %}

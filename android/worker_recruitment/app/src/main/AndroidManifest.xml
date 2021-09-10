@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.worker_recruitment">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/worker"
+        android:label="WORKER RECRUITMENT"
+        android:roundIcon="@drawable/worker"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Worker_recruitment"
+        android:usesCleartextTraffic="true">
+
+        <activity android:name=".send_work_request"></activity>
+        <activity android:name=".view_sent_work_req" />
+        <activity android:name=".view_work_requests" />
+        <activity android:name=".viewalllikes_my_post" />
+        <activity android:name=".view_comment_my_post" />
+        <activity android:name=".add_my_post_comment" />
+        <activity android:name=".Add_rating" />
+        <activity android:name=".viewalllikes" />
+        <activity android:name=".add_my_comment" />
+        <activity android:name=".add_comment" />
+        <activity android:name=".edit_profile" /> <!-- <meta-data -->
+        <!-- android:name="com.google.android.actions"> -->
+        <!-- </meta-data> -->
+        <activity
+            android:name=".view_profile"
+            android:label="@string/title_activity_view_profile"
+            android:theme="@style/Theme.Worker_recruitment.NoActionBar" />
+        <activity
+            android:name=".Home"
+            android:label="@string/title_activity_home"
+            android:theme="@style/Theme.Worker_recruitment.NoActionBar" />
+
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
+
+        <activity android:name=".view_send_friend_request" />
+        <activity android:name=".view_friends" />
+        <activity android:name=".view_friend_request" />
+        <activity android:name=".complaint_send" />
+        <activity android:name=".view_complaint" />
+        <activity android:name=".view_other_user" />
+        <activity android:name=".view_friends_post" />
+        <activity android:name=".Viewpost" />
+        <activity android:name=".add_post" />
+        <activity android:name=".registration" />
+
+        <service android:name=".LocationService" />
+
+        <activity android:name=".Login" />
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
